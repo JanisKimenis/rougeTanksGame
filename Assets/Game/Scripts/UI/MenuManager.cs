@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    Button versusAiStartMenuButton;
+    Button ReturnToMMButton;
     Canvas mainMenuCanvas;
     Canvas vsAiMenuCanvas;
 
@@ -13,14 +13,14 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        versusAiStartMenuButton = GameObject.Find("ReturnToMMButton").GetComponent<Button>();
+        ReturnToMMButton = GameObject.Find("ReturnToMMButton").GetComponent<Button>();
         mainMenuCanvas = GameObject.Find("StartMenuCanvas").GetComponent<Canvas>();
         vsAiMenuCanvas = GameObject.Find("VersusAICanvas").GetComponent<Canvas>();
-        versusAiStartMenuButton.onClick.AddListener(() => BackToMainMenu(vsAiMenuCanvas));
+        ReturnToMMButton.onClick.AddListener(() => SwitchCanvas(vsAiMenuCanvas, mainMenuCanvas));
     }
-    void BackToMainMenu(Canvas aCanvas)
+    void SwitchCanvas(Canvas aCanvas, Canvas bCanvas)
     {
-        mainMenuCanvas.enabled = true;
         aCanvas.enabled = false;
+        bCanvas.enabled = true;
     }
 }
