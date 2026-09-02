@@ -14,7 +14,5 @@ public class WrapperManager : MonoBehaviour
 
     // public void RecieveMainMenu
 
-    // make function to connect any manager needed, and then do a func for what is needed
-    
-    
+  
 }
